@@ -18,7 +18,7 @@ class Sampler:
             saver.restore(self._sess, author)
         self._hidden_state_size = hidden_state_size
         self._h = np.zeros(hidden_state_size)
-        self._translation_dict = pickle.load(open(translation_dict_path, "rb"))
+        self._translation_dict = pickle.load(open(translation_dict_path, "r"))
 
     def close(self):
         self._sess.close()
