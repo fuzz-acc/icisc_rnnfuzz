@@ -228,7 +228,7 @@ if __name__ == "__main__":
                 char_int_list = []
                 for i in range(1):
                     char_int = Sampler.sample_by_prop(ryo[i], VOCAB_SIZE, 0)
-                    out_str += translation["INT_TO_CHAR"][char_int]
+                    out_str += str(translation["INT_TO_CHAR"][char_int])
                     char_int_list.append(char_int)
                 ry = np.array([char_int_list])
             with open(args.out_folder + "samples/sample_" + timestamp + "_epoch_" + str(epoch + 1) + ".txt", "wb") as fd:
