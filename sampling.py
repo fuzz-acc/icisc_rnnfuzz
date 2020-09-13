@@ -63,7 +63,7 @@ class Sampler:
         return outchar
 
     def __init_variables(self, seed, reset_hidden=False):
-        str_int_list = [self._translation_dict["CHAR_TO_INT"][ch]
+        str_int_list = [self._translation_dict["CHAR_TO_INT"][ord(ch)]
                         for ch in seed]
         x = np.array([str_int_list])
         if reset_hidden:
