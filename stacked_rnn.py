@@ -233,7 +233,7 @@ if __name__ == "__main__":
                 ry = np.array([char_int_list])
             with open(args.out_folder + "samples/sample_" + timestamp + "_epoch_" + str(epoch + 1) + ".txt", "wb") as fd:
                 fd.write(b"======================================== SAMPLE ========================================\n")
-                fd.write(bytes(out_str))
+                fd.write(out_str.encode())
                 fd.write(b"\n====================================== END SAMPLE ======================================\n")
         if (epoch + 1) % 10 == 0 and LAST_DIVISION != (epoch + 1):
             learn_rate /= 2  # from the seq2seq paper but a wee bit later epoch wise
