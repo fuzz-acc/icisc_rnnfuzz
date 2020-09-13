@@ -258,7 +258,7 @@ if __name__ == "__main__":
         ls, acc, smm = sess.run([batchloss, accuracy, summaries], feed_dict=feed_dict)
         validation_writer.add_summary(smm, step)
         with open(args.out_folder + "checkpoints/last_vl_loss.txt", "wb") as fd:
-            fd.write(b"Last Validation loss: " + str(ls))
+            fd.write(b"Last Validation loss: " + str(ls).encode())
     saver.save(sess, args.out_folder + "checkpoints/rnn_train_" + timestamp, global_step=step)
     print("===========================================================================================================")
     print("===========================================================================================================")
